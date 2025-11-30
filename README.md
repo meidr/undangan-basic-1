@@ -1,8 +1,8 @@
 
-# Website Undangan - Tema 8
+# Website Undangan - Tema Basic 1
 
 ## Deskripsi
-Website Undangan Tema 8 dari PT Jadi Mudah Nusantara adalah sebuah platform digital yang dirancang untuk membantu pengguna dalam membuat undangan pernikahan secara online. Dengan desain elegan dan fitur yang lengkap, website ini memudahkan calon pengantin untuk berbagi informasi acara dengan keluarga dan teman.
+Website Undangan Tema Basic 1 dari PT Jadi Mudah Nusantara adalah sebuah platform digital yang dirancang untuk membantu pengguna dalam membuat undangan pernikahan secara online. Dengan desain elegan dan fitur yang lengkap, website ini memudahkan calon pengantin untuk berbagi informasi acara dengan keluarga dan teman.
 
 ## Fitur
 - **Desain Responsif**: Tampilan yang menyesuaikan dengan perangkat (desktop, tablet, dan smartphone).
