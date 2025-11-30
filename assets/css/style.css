@@ -3,8 +3,16 @@
   src: url("../font/brilon.ttf") format("truetype");
 }
 @font-face {
-  font-family: "batusa";
+  font-family: "iskri";
   src: url("../font/Batusa.otf") format("opentype");
+}
+@font-face {
+  font-family: "pinyon";
+  src: url("../font/pinyon script.woff2") format("opentype");
+}
+@font-face {
+  font-family: "iskri";
+  src: url("../font/iskri.woff2") format("opentype");
 }
 
 :root {
@@ -35,15 +43,15 @@
   --rgb-tertiary-clr: 144, 144, 144;
   --btn-default: #d4cfc2;
   --btn-default-rgb: 212, 207, 194;
-  --texture-body: url("../img/texture-body.png");
+  --texture-body: url("../img/28.webp");
   --heading-family: "brilon", serif;
   --heading-style: normal;
-  --heading-weight: 400;
+  --heading-weight: 550;
   --heading-size: 4.2rem;
   --heading-size-smaller: 3.5rem;
   --heading-size-mobile: 2.7rem;
   --heading-lettercase: none;
-  --body-text-family: "batusa", serif;
+  --body-text-family: "iskri", serif;
   --body-text-style: normal;
   --body-text-weight: 500;
   --body-text-size: calc(4vw + 0.384px);
@@ -56,7 +64,7 @@
   --fs-extra-6: 12px;
   --fs-extra-7: 15px;
   --fs-extra-8: 20px;
-  --background-primary: rgb(241, 233, 223);
+  --background-primary: #965458;
   --background-primary-rgb: 16, 36, 71;
   --background-secondary: #5d4a37;
   --background-secondary-rgb: 203, 217, 224;
@@ -70,8 +78,8 @@
   --text-tertiary-rgb: 64, 64, 64;
   --button-text-primary: #102447;
   --button-text-primary-rgb: 239, 236, 229;
-  --button-background-primary: #5d4a37;
-  --button-background-primary-rgb: 149, 109, 131;
+  --button-background-primary: rgb(175, 124, 125);
+  --button-background-primary-rgb: 175, 124, 125;
   --button-text-secondary: #956d83;
   --button-text-secondary-rgb: 149, 109, 131;
   --button-background-secondary: #102447;
@@ -104,10 +112,11 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 0.3s ease;
+  border-radius: 50px;
 }
 
 .btn-invites:hover {
-  background-color: #f2b4c3;
+  background-color: #fdcec5;
   /* Warna ungu lebih gelap saat hover */
   transform: scale(1.05);
   color: #ffffff;
@@ -152,7 +161,7 @@ body.mfahmialif h6 {
 
 .font-heading {
   color: #5d4a37;
-  font-family: "batusa", Sans-serif !important;
+  font-family: "pinyon", Sans-serif !important;
   font-size: 30px !important;
   font-weight: 500 !important;
   text-transform: uppercase !important;
@@ -177,7 +186,7 @@ body.mfahmialif h6 {
 
 .font-heading-date {
   color: #5d4a37;
-  font-family: "batusa", Sans-serif;
+  font-family: "iskri", Sans-serif;
   font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
@@ -185,14 +194,14 @@ body.mfahmialif h6 {
 }
 
 .header-1 {
-  font-size: 30px !important;
+  font-size: 3rem !important;
   text-align: center !important;
   font-weight: var(--heading-weight) !important;
   text-transform: var(--heading-lettercase) !important;
 }
 
 .header-2 {
-  font-size: 14px !important;
+  font-size: 1.2rem !important;
   text-align: center !important;
   font-weight: var(--heading-weight) !important;
   text-transform: var(--heading-lettercase) !important;
@@ -204,7 +213,7 @@ body.mfahmialif h6 {
 
 .text-body-1 {
   color: #5d4a37;
-  font-family: "batusa", Sans-serif;
+  font-family: "iskri", Sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5em;
@@ -214,7 +223,7 @@ body.mfahmialif h6 {
 
 .text-body-2 {
   color: #5d4a37;
-  font-family: "batusa", Sans-serif;
+  font-family: "iskri", Sans-serif;
   font-size: 16px;
   line-height: 1.5em;
   letter-spacing: 1px;
@@ -242,7 +251,7 @@ body.mfahmialif h6 {
 
 .text-body-5 {
   color: #5d4a37;
-  font-family: "batusa", Sans-serif;
+  font-family: "iskri", Sans-serif;
   font-size: 14px;
   line-height: 1.5em;
   letter-spacing: 1px;
@@ -288,13 +297,16 @@ body.mfahmialif {
 #welcome {
   min-height: 100dvh;
   width: 100%;
-  background: url("../img/countdown-bg.jpg") no-repeat center center;
+  background: url(../img/welcome-bg.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .welcome-container {
-  background-color: rgba(241, 233, 223, 0.5);
+  /* background-color: rgba(241, 233, 223, 0.5); */
   object-fit: cover;
-  background-size: cover;
+  /* background-size: cover; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -308,9 +320,9 @@ body.mfahmialif {
   flex-direction: column;
   position: relative;
   height: calc(100dvh - 80px);
-  background-color: #f9f6efc9;
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
-  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  /* background-color: #f9f6efc9;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3); */
+  /* transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s; */
   padding: 20px;
   border-radius: 200px 200px 200px 200px;
 }
@@ -320,7 +332,7 @@ body.mfahmialif {
   height: 100dvh;
   margin: 0;
   gap: 10px;
-  background: url("../img/header.png") center/cover no-repeat;
+  background: url("../img/26.webp") center/cover no-repeat;
 }
 
 .break {
@@ -358,7 +370,11 @@ body.mfahmialif {
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  justify-content: center;
+  justify-content: end;
+  align-items: start;
+  flex-direction: column;
+  padding-left: 120px;
+  padding-bottom: 50px;
 }
 
 .couple-details {
@@ -378,11 +394,27 @@ body.mfahmialif {
   width: 30.5%;
   margin-left: auto;
   /* background-image: var(--texture-body); */
-  background-position: top left;
-  background-size: 100% auto;
-  background-repeat: repeat;
+  /* background-position: center; */
+  background-size: contain;
+  background-attachment: fixed;
   min-height: 100dvh;
   overflow: hidden;
+}
+
+.main-bg {
+  position: fixed;
+  width: 30.5%;
+  height: 100dvh;
+  object-fit: cover;
+  z-index: -9999;
+  top: 0;
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .main-bg {
+    width: 100%;
+  }
 }
 
 .position-absolute-center {
@@ -412,7 +444,7 @@ body.mfahmialif {
 
 #wedding-of {
   /* background: url("../img/bg-0.jpg"); */
-  background-color: var(--background-primary);
+  // background-color: var(--background-primary);
 
   margin-top: 0px;
   padding-top: 50px;
@@ -569,14 +601,14 @@ body.mfahmialif {
 .item-container .item .number {
   color: #fff;
   border-radius: 0px 0px 0px 0px;
-  font-family: "batusa", Sans-serif;
+  font-family: "iskri", Sans-serif;
   font-size: 14px;
   font-weight: 400;
 }
 
 .item-container .item .desc {
   color: #fff;
-  font-family: "batusa", Sans-serif;
+  font-family: "iskri", Sans-serif;
   font-size: 10px;
   font-weight: 400;
 }
@@ -1289,12 +1321,13 @@ body.mfahmialif {
 
 .fl-welcome-1 {
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 0; /* tempel di bawah */
+  left: 50%; /* posisikan titik awal di tengah */
+  transform: translateX(-50%); /* geser balik agar benar-benar center */
   width: 63%;
-  transform: translate(-34%, -25%);
   z-index: 4;
 }
+
 .fl-welcome-2 {
   position: absolute;
   bottom: 0;

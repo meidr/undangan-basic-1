@@ -73,29 +73,12 @@ document.addEventListener("DOMContentLoaded", function () {
   splideOurStory.mount();
   
   Fancybox.bind("[data-fancybox]", {});
-
-  openingVideo.addEventListener("play", function () {
-    setTimeout(() => {
-      const elements = document.querySelectorAll(".hidden-element");
-
-      elements.forEach((el, index) => {
-        setTimeout(() => {
-          el.classList.add("fade-in");
-        }, index * 300);
-      });
-    }, 10000);
-  });
-
-  openingVideo.addEventListener("ended", function () {
-    openingVideo.remove(); // Removes the video from the DOM after it finishes
-  });
 });
 // END NEED TO RUN THIS SCRIPT AFTER LOADING JQUERY //
 
 // FUNCTIONS //
 function openInvites() {
   // audio.play(); // Play the music if paused
-  openingVideo.play(); // Play the opening video
   contentWedding.style.display = "block"; // Show
   $("#welcome").fadeOut();
   $("#header").css("opacity", 1);
