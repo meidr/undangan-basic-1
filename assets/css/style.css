@@ -170,15 +170,15 @@ body.mfahmialif h6 {
 
 .font-heading-latin-1 {
   color: #5d4a37;
-  font-family: "brilon", Sans-serif;
-  font-size: 40px;
+  font-family: "pinyon", Sans-serif;
+  font-size: 100px;
   font-weight: 500;
   letter-spacing: 1.5px;
 }
 
 .font-heading-latin-2 {
   color: #5d4a37 !important;
-  font-family: "brilon", Sans-serif;
+  font-family: "pinyon", Sans-serif;
   font-size: 50px;
   font-weight: 500;
   letter-spacing: 1.5px;
@@ -445,7 +445,12 @@ body.mfahmialif {
 #wedding-of {
   /* background: url("../img/bg-0.jpg"); */
   // background-color: var(--background-primary);
-
+  background-color: rgba(255, 255, 255, 0.5); /* putih transparan */
+  border-radius: 60px; /* sudut melengkung */
+  border: 5px solid #965458;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.28);
+  margin-left: 30px;
+  margin-right: 30px;
   margin-top: 0px;
   padding-top: 50px;
   padding-bottom: 48px;
