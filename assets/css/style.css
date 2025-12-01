@@ -813,21 +813,15 @@ body.meirahmawati {
 }
 
 .fl-our-story img {
-  /* Hapus jarak luar dan dalam */
-  margin: 0;
+  margin-left: -60px;
   padding: 0;
-  /* Tetapkan tinggi dan lebar agar seragam (opsional) */
-  height: 200px;
-  width: auto; /* Biarkan lebar menyesuaikan aspek rasio */
-
-  /* Cegah gambar menyusut atau membesar (opsional) */
+  height: 250px;
+  width: auto; 
   flex-shrink: 0;
   flex-grow: 0;
-
-  /* Hapus white-space antar elemen inline/inline-block
-       (Meskipun Flexbox meminimalkan ini, ini praktik yang baik untuk gambar) */
   display: block;
-  margin-right: -10dvh; /* Atur margin kanan negatif jika diperlukan */
+  margin-right: -10dvh; 
+  margin-top: -20px;
 }
 
 #gallery {
@@ -836,18 +830,19 @@ body.meirahmawati {
   align-items: center;
   flex-direction: column;
   background-color: rgba(150, 84, 88, 0.66);
-  margin-bottom: 74px;
   margin-top: 100px !important;
-  height: 1100px;
+  height: 1000px;
 
 }
 
 #video {
+  margin-top: -75px !important;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--background-primary);
+  background-color:  rgba(150, 84, 88, 0.66);
+  margin-bottom:100px!important;
 }
 
 .background-video {
