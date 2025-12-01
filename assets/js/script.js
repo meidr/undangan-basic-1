@@ -48,8 +48,25 @@ $(window).on("scroll", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  ourStoryScroll();
   $("html, body").animate({ scrollTop: 0 }, 800); // Durasi 800ms
   contentWedding.style.display = "none"; // Hide
+
+  var splideCountdown = new Splide("#splide-countdown", {
+    perPage: 1,
+    focus: "center",
+    // type: "loop",
+    pagination: false, // ⛔ pagination dimatikan
+    arrows: false,
+    lazyLoad: "sequential",
+    interval: 4000,
+    speed: 5000,
+    autoplay: true, // ▶ autoplay aktif
+    drag: false, // 🛑 tidak bisa drag dengan mouse
+    swipe: false, // 🛑 tidak bisa swipe di HP
+  });
+
+  splideCountdown.mount();
 
   var splideOurStory = new Splide("#splide-our-story", {
     perPage: 1,
@@ -71,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   splideOurStory.mount();
-  
+
   Fancybox.bind("[data-fancybox]", {});
 });
 // END NEED TO RUN THIS SCRIPT AFTER LOADING JQUERY //
@@ -99,6 +116,70 @@ function toggleEnvelope() {
 function showQrInvitation() {
   const box = document.querySelector(".qr-invitation");
   box.classList.toggle("expanded");
+}
+
+function ourStoryScroll() {
+  const timelineLine = document.querySelector(".timeline-line");
+  const storyCards = document.querySelectorAll(".story-card.js-reveal");
+
+  if (!timelineLine || storyCards.length === 0) {
+    return;
+  }
+
+  let isTicking = false;
+
+  function calculateFillPercentage() {
+    const firstCard = storyCards[0];
+    const lastCard = storyCards[storyCards.length - 1];
+
+    // ----------------------------------------------------
+    // 🎯 Penyesuaian Viewport (Viewport Offset)
+    // ----------------------------------------------------
+
+    // 1. START SCROLL POINT (Kapan garis mulai mengisi)
+    // Kita ingin garis mulai mengisi saat kartu pertama (firstCard) baru saja masuk ke layar.
+    // Kita gunakan offset 0.9 (90% dari bawah layar).
+    const startCardTop = firstCard.getBoundingClientRect().top + window.scrollY;
+    // Animasi dimulai ketika kartu pertama mencapai 90% dari bawah layar.
+    const startScrollPoint = startCardTop - window.innerHeight * 0.9;
+
+    // 2. END SCROLL POINT (Kapan garis terisi 100%)
+    // Kita ingin garis terisi penuh saat dot terakhir sudah melewati bagian atas layar.
+    // Kita gunakan offset 0.1 (10% dari atas layar).
+    const lastDot = lastCard.querySelector(".dot");
+    const lastDotTop = lastDot
+      ? lastDot.getBoundingClientRect().top + window.scrollY
+      : lastCard.getBoundingClientRect().top + window.scrollY;
+    // Animasi berakhir ketika dot terakhir melewati 10% dari atas layar.
+    const endScrollPoint = lastDotTop - window.innerHeight * 0.1;
+
+    // ----------------------------------------------------
+
+    const scrollRange = endScrollPoint - startScrollPoint;
+    let currentScrollDistance = window.scrollY - startScrollPoint;
+
+    let fillPercentage = (currentScrollDistance / scrollRange) * 100;
+    fillPercentage = Math.min(100, Math.max(0, fillPercentage));
+
+    return fillPercentage;
+  }
+
+  // Fungsi untuk memperbarui tinggi garis menggunakan requestAnimationFrame
+  function updateTimelineFill() {
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        const fillPercentage = calculateFillPercentage();
+        timelineLine.style.height = `${fillPercentage}%`;
+        isTicking = false;
+      });
+      isTicking = true;
+    }
+  }
+
+  // Pasang event listener
+  window.addEventListener("scroll", updateTimelineFill);
+  window.addEventListener("resize", updateTimelineFill);
+  updateTimelineFill();
 }
 
 // END FUNCTIONS //

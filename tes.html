@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamaran & Cerita</title>
+    <style>
+        /* Styling Dasar */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f3f3;
+            /* Warna latar belakang umum */
+            color: #333;
+        }
+
+        /* Container utama untuk layout */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Sidebar Timeline */
+        .timeline-sidebar {
+            width: 60px;
+            /* Lebar sidebar */
+            padding: 20px 0;
+            position: relative;
+            /* Membuat sidebar tetap di tempat saat konten di-scroll */
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            /* Agar bisa menampung garis vertikal penuh */
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Garis Vertikal */
+        .timeline-line {
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            background-color: #c9c1c1;
+            /* Warna garis yang lebih pudar */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Penanda Posisi (Dot/Kotak) */
+        .timeline-marker {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #8c0000;
+            /* Warna penanda aktif (merah maroon) */
+            border-radius: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Memastikan marker tepat di tengah */
+            z-index: 10;
+            /* Agar di atas garis */
+            transition: top 0.3s ease-out;
+            /* Animasi perpindahan marker */
+        }
+
+        /* Wrapper Konten Utama */
+        .content-wrapper {
+            flex-grow: 1;
+            /* Mengambil sisa lebar */
+            padding: 20px;
+        }
+
+        /* Setiap Bagian Konten */
+        .content-section {
+            padding: 20px 0;
+            min-height: 80vh;
+            /* Membuat setiap section cukup tinggi untuk di-scroll */
+            display: flex;
+            align-items: center;
+            /* Memastikan konten di tengah vertikal */
+        }
+
+        /* Styling Card Konten */
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .image-placeholder {
+            margin-bottom: 20px;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .title {
+            font-size: 1.8em;
+            color: #8c0000;
+            /* Warna judul */
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="timeline-sidebar">
+            <div class="timeline-line"></div>
+            <div class="timeline-marker" id="marker-lamaran"></div>
+        </div>
+
+        <div class="content-wrapper">
+
+            <section class="content-section" id="lamaran">
+                <div class="card">
+                    <div class="image-placeholder">
+                        <img src="image_6857d9.jpg" alt="Foto Lamaran">
+                    </div>
+
+                    <div class="text-content">
+                        <h2 class="title">Lamaran</h2>
+                        <p>Sampai akhirnya kami kembali dan saling meyakinkan, **31 Desember 2023** kami memutuskan
+                            mengikat hubungan yang disaksikan oleh dua keluarga besar.</p>
+                        <p>Ini adalah awal dari perjalanan panjang, sebuah janji yang disatukan dalam restu. Perasaan
+                            haru dan bahagia menyelimuti momen sakral tersebut, menandai babak baru dalam kisah cinta
+                            kami.</p>
+                        <p>Persiapan telah dilakukan dengan matang, mulai dari detail kecil hingga acara utama. Semua
+                            demi menciptakan kenangan yang tak terlupakan bagi kami dan seluruh keluarga yang hadir.</p>
+                        <p>Momen ini menjadi pengingat bahwa cinta sejati selalu menemukan jalan untuk kembali dan
+                            bersemi lebih indah dari sebelumnya.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section style="height: 100vh; background-color: #f0f0f0; padding-top: 100px; text-align: center;">
+                <h2>Scroll ke Bawah untuk Lihat Efek</h2>
+                <p>Konten tambahan untuk memastikan halaman dapat di-scroll.</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
